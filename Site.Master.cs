@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,5 +15,9 @@ namespace Digital_Certificate_Verification
         {
 
         }
-    }
+
+       
+
+
+}
 }
