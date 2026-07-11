@@ -203,46 +203,49 @@ All database logic is encapsulated inside a single PL/SQL package: `cert_pkg`
 
 ---
 
+
+
 ## Project Structure
+
+~~~
 DigitalCertSystem/
 │
 ├── Database/
-│   ├── 01_schema.sql           -- All CREATE TABLE and sequences
-│   ├── 02_seed_data.sql        -- Sample data for all 7 tables
-│   ├── 03_cert_pkg.sql         -- PL/SQL package spec + body
-│   └── 04_triggers.sql         -- All 10 triggers
+│   ├── 01_schema.sql               -- All CREATE TABLE and sequences
+│   ├── 02_seed_data.sql            -- Sample data for all 7 tables
+│   ├── 03_cert_pkg.sql             -- PL/SQL package spec + body
+│   └── 04_triggers.sql             -- All 10 triggers
 │
-├── Site.Master                 -- Shared layout, navbar, footer
+├── Site.Master                     -- Shared layout, navbar, footer
 ├── Site.master.cs
 │
-├── Login.aspx                  -- Admin login
+├── Login.aspx                      -- Admin login
 ├── Login.aspx.cs
-├── StudentLogin.aspx           -- Student login
+├── StudentLogin.aspx               -- Student login
 ├── StudentLogin.aspx.cs
 │
-├── AdminDashboard.aspx         -- Stat cards dashboard
+├── AdminDashboard.aspx             -- Stat cards dashboard
 ├── AdminDashboard.aspx.cs
-├── ManageStudents.aspx         -- Add / Edit / Delete students
+├── ManageStudents.aspx             -- Add / Edit / Delete students
 ├── ManageStudents.aspx.cs
-├── ManageCertificates.aspx     -- Add / Edit / Delete certificates
+├── ManageCertificates.aspx         -- Add / Edit / Delete certificates
 ├── ManageCertificates.aspx.cs
-├── CertificateList.aspx        -- Sidebar checkbox filters + search
+├── CertificateList.aspx            -- Sidebar checkbox filters + search
 ├── CertificateList.aspx.cs
-├── ManageRequests.aspx         -- Approve / Reject pending requests
+├── ManageRequests.aspx             -- Approve / Reject pending requests
 ├── ManageRequests.aspx.cs
 │
-├── RequestCertificate.aspx     -- Student: submit request
+├── RequestCertificate.aspx         -- Student: submit request
 ├── RequestCertificate.aspx.cs
-├── MyRequests.aspx             -- Student: track own requests
+├── MyRequests.aspx                 -- Student: track own requests
 ├── MyRequests.aspx.cs
 │
-├── VerifyCertificate.aspx      -- Public: verify by certificate code
+├── VerifyCertificate.aspx          -- Public: verify by certificate code
 ├── VerifyCertificate.aspx.cs
 │
-├── DBHelper.cs                 -- Static connection + command helper
-└── Web.config                  -- Oracle connection string
-
----
+├── DBHelper.cs                     -- Static connection + command helper
+└── Web.config                      -- Oracle connection string
+~~~
 
 ## Pages
 
