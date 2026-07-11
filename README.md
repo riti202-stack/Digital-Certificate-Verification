@@ -81,6 +81,7 @@ The Digital Certificate Verification System allows educational institutions to:
 ## Database Schema
 
 ### Tables (7)
+```
 Departments
 department_id   NUMBER  PK
 department_name VARCHAR2(100)
@@ -134,8 +135,10 @@ certificate_id NUMBER
 old_status     VARCHAR2(20)
 new_status     VARCHAR2(20)
 changed_on     DATE
+```
 
 ### ER Diagram (Text)
+```
 Departments  ──(1 to M)──  Students  ──(1 to M)──  Certificates  ──(M to 1)──  Certificate_Types
 │
 (1 to M)
@@ -145,6 +148,7 @@ Students  ──(1 to M)──  Certificate_Requests  ──(M to 1)──  Cert
 Certificate_Requests  ──(M to 1)──  Admins
 Certificate_Requests  ──(M to 1)──  Certificates  (after approval)
 Certificates  ──(1 to M)──  Cert_Audit_Log
+```
 
 ---
 
