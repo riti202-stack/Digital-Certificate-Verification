@@ -1,28 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Digital_Certificate_Verification.Login" %>
+﻿<%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Login.aspx.cs" Inherits="DigitalCertSystem.Login" %>
 
- <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="Head">
-      <link rel="stylesheet" type="text/css" href="style/site.css" />
-
- </asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="login-wrapper">
-            <div class="login-card">
-                <h1 class="brand">CertVerify</h1>
-                <p class="subtitle">Digital Certificate Verification System</p>
-
-                <asp:Label ID="lblError" runat="server" CssClass="error-text" Visible="false"></asp:Label>
-
-                <asp:Label runat="server" AssociatedControlID="txtEmail" CssClass="form-label">Email</asp:Label>
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="you@institution.edu"></asp:TextBox>
-
-                <asp:Label runat="server" AssociatedControlID="txtPassword" CssClass="form-label">Password</asp:Label>
-                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="********"></asp:TextBox>
-
-                <asp:Button ID="btnLogin" runat="server" Text="Sign in" CssClass="btn-primary btn-block" OnClick="btnLogin_Click" />
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <div class="d-flex justify-content-center">
+        <div class="card p-4" style="width:380px;">
+            <h4 class="text-center mb-3"><i class="bi bi-shield-lock text-primary"></i> Admin Login</h4>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="Enter username" />
             </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Enter password" />
+            </div>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary w-100" OnClick="btnLogin_Click" />
+            <asp:Label ID="lblMessage" runat="server" CssClass="text-danger d-block mt-2 text-center" />
+            <hr />
+            <a href="StudentLogin.aspx" class="d-block text-center small">Student login →</a>
         </div>
-    
-
-
-            </asp:Content>
+    </div>
+</asp:Content>
