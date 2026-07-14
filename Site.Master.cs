@@ -1,23 +1,44 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using System;
 
-namespace Digital_Certificate_Verification
+namespace DigitalCertSystem
 {
-    public partial class SiteMaster : MasterPage
+    public partial class SiteMaster : System.Web.UI.MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public string HomeUrl
         {
-
+            get
+            {
+                if (Session["AdminId"] != null) return "AdminDashboard.aspx";
+                if (Session["StudentId"] != null) return "RequestCertificate.aspx";
+                return "VerifyCertificate.aspx";
+            }
         }
 
-       
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["AdminId"] != null)
+            {
+                phAdminNav.Visible = true;
+                phLoggedIn.Visible = true;
+                lblWelcome.Text = "<i class='bi bi-person-circle'></i> " + Session["AdminUsername"];
+            }
+            else if (Session["StudentId"] != null)
+            {
+                phStudentNav.Visible = true;
+                phLoggedIn.Visible = true;
+                lblWelcome.Text = "<i class='bi bi-person-circle'></i> " + Session["StudentName"];
+            }
+            else
+            {
+                phLoggedOut.Visible = true;
+            }
+        }
 
-
-}
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("VerifyCertificate.aspx");
+        }
+    }
 }
