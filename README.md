@@ -363,5 +363,5 @@ Press `F5` in Visual Studio. The browser will open at `VerifyCertificate.aspx`.
 |---|---|
 | Institution | Khulna University of Engineering & Technology (KUET) |
 | Course | CSE 3110 — Database Systems Laboratory |
-| Supervisor | Assistant Professor Kazi Saeed Alam |
+| Supervisor | Waliul Islam Sumon and Kaniz Fatema Isha|
 | Academic Year | 2025–2026 |
